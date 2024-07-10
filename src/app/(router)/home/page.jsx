@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 
@@ -9,10 +11,9 @@ const HomePage = () => {
       <div className="container-fluid d-none d-lg-block">
         <div className="row align-items-center py-4 px-xl-5">
             <div className="col-lg-3">
-                <img className="logoimg" src="img/smallflylogo.jpg" alt="" srcSet=""  />
-                {/* <!-- <a href="" className="text-decoration-none">
-                    <h1 className="m-0"><span className="text-primary">E</span>COURSES</h1>
-                </a> --> */}
+                <Link href={"/"}>
+                <Image src="/img/smallflylogo.jpg" alt="logImage" className="logoimg" width={120} height={80}/>
+                </Link>
             </div>
             <div className="col-lg-3 text-right">
                 <div className="d-inline-flex align-items-center">
@@ -71,10 +72,10 @@ const HomePage = () => {
             <div className="col-lg-9">
                 <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     
-                    <a href="" className="text-decoration-none d-block d-lg-none">
-                        <img className="logoimg" src="img/smallflylogo.jpg" alt="" srcSet="" />
+                    <Link href="" className="text-decoration-none d-block d-lg-none">
+                        <Image className="logoimg" src="/img/smallflylogo.jpg" alt="" width={80} height={40} srcSet="" />
                         {/* <!-- <h1 className="m-0"><span className="text-primary">E</span>COURSES</h1> --> */}
-                    </a>
+                    </Link>
                     <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -103,7 +104,7 @@ const HomePage = () => {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active" style={{minHeight: "300px"}}>
-                    <img className="position-relative w-100" src="img/slider/aviation-bg.jpg"
+                    <Image className="position-relative w-100" src="/img/slider/aviation-bg.jpg" fill={true}
                         style={{minHeight: "300px", objectFit: "cover"}}/>
                     {/* <!-- <div className="carousel-caption d-flex align-items-center justify-content-center">
                         <div className="p-5" style="width: 100%; max-width: 900px;">
@@ -114,8 +115,8 @@ const HomePage = () => {
                     </div> --> */}
                 </div>
                 <div className="carousel-item" style={{minHeight: "300px"}}>
-                    <img className="position-relative w-100" src="img/slider/slider-13.jpg"
-                                               style={{minHeight: "300px", objectFit: "cover"}}/>
+                    <Image className="position-relative w-100" src="/img/slider/slider-13.jpg"
+                                        fill={true}       style={{minHeight: "300px", objectFit: "cover"}}/>
                     {/* <!-- <div className="carousel-caption d-flex align-items-center justify-content-center">
                         <div className="p-5" style="width: 100%; max-width: 900px;">
                             <h5 className="text-white text-uppercase mb-md-3">Best Online Courses</h5>
@@ -125,8 +126,8 @@ const HomePage = () => {
                     </div> --> */}
                 </div>
                 <div className="carousel-item" style={{minHeight: "300px"}}>
-                    <img className="position-relative w-100" src="img/slider/slider-17.jpg"
-                              style={{minHeight: "300px", objectFit: "cover"}}/>
+                    <Image className="position-relative w-100" src="/img/slider/slider-17.jpg"
+                         fill={true}     style={{minHeight: "300px", objectFit: "cover"}}/>
                     {/* <!-- <div className="carousel-caption d-flex align-items-center justify-content-center">
                         <div className="p-5" style="width: 100%; max-width: 900px;">
                             <h5 className="text-white text-uppercase mb-md-3">Best Online Courses</h5>
@@ -144,7 +145,7 @@ const HomePage = () => {
         <div className="container py-5">
             <div className="row align-items-center">
                 <div className="col-lg-5">
-                    <img className="img-fluid rounded mb-4 mb-lg-0" src="img/flylogo.jpg" alt=""/>
+                    <Image className="img-fluid rounded mb-4 mb-lg-0" src="/img/flylogo.jpg" alt="" width={600} height={400} />
                 </div>
                 <div className="col-lg-7">
                     <div className="text-left mb-4">
@@ -173,7 +174,7 @@ const HomePage = () => {
             <div className="row">
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/mutut.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/mutut.png" alt="" width={300} height={100}/>
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Muthoot Finance</h4>
                             <span>8+ Students</span>
@@ -182,7 +183,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/emirates.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/emirates.png" alt="" width={300} height={100}/>
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Emirates</h4>
                             <span>5+ Students</span>
@@ -191,7 +192,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/hdfcc.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/hdfcc.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">HDFC Bank</h4>
                             <span>18+ Students</span>
@@ -200,7 +201,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/indigo.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/indigo.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">IndiGo</h4>
                             <span>6+ Students</span>
@@ -209,7 +210,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/jet airways.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/jet airways.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Jet Airways</h4>
                             <span>6+ Students</span>
@@ -218,7 +219,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/kotak.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/kotak.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Kotak</h4>
                             <span>7+ Students</span>
@@ -227,7 +228,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/qatar.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/qatar.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Qatar Airways</h4>
                             <span>3+ Students</span>
@@ -236,7 +237,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="cat-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/companies/spice jet.png" alt=""/>
+                        <Image className="img-fluid" src="/img/companies/spice jet.png" alt="" width={300} height={100} />
                         <a className="cat-overlay text-white text-decoration-none" href="">
                             <h4 className="text-white font-weight-medium">Spicejet</h4>
                             <span>7+ Students</span>
@@ -259,7 +260,7 @@ const HomePage = () => {
             <div className="row">
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/hotel-managment.jpg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/hotel-managment.jpg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -278,7 +279,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/air.jpeg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/air.jpeg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -297,7 +298,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/cabin.jpg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/cabin.jpg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -316,7 +317,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/airport.jpeg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/airport.jpeg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -335,7 +336,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/Travel-and-Tourism.png" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/Travel-and-Tourism.png" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -354,7 +355,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/hr.jpg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/hr.jpg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -373,7 +374,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/marketing-management.jpeg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/marketing-management.jpeg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -392,7 +393,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/metro-management.jpg" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/metro-management.jpg" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -411,7 +412,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="rounded overflow-hidden mb-2">
-                        <img className="img-fluid" src="img/cources/Web-Design.png" alt=""/>
+                        <Image width={600} height={200} className="img-fluid" src="/img/cources/Web-Design.png" alt=""/>
                         <div className="bg-secondary p-4">
                             <div className="d-flex justify-content-between mb-3">
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
@@ -510,7 +511,7 @@ const HomePage = () => {
                             <i className="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 className="font-weight-normal mb-4">The master-builder of human happines no one rejects,
                                 dislikes avoids pleasure itself, because it is very pursue pleasure.</h4>
-                            <img className="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="" />
+                            {/* <img className="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="" /> */}
                             <h5 className="m-0">Arvind kumar</h5>
                             <span>Web Designer</span>
                         </div>
@@ -518,7 +519,7 @@ const HomePage = () => {
                             <i className="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 className="font-weight-normal mb-4">They have got my project on time with the competition
                                 with a sed highly skilled, and experienced & professional team.</h4>
-                            <img className="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt=""/>
+                            {/* <img className="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt=""/> */}
                             <h5 className="m-0">Priyanshi Agrawal</h5>
                             <span>Cabin Crew</span>
                         </div>
@@ -526,7 +527,7 @@ const HomePage = () => {
                             <i className="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 className="font-weight-normal mb-4">Explain to you how all this mistaken idea of denouncing
                                 pleasure and praising pain was born and I will give you completed.</h4>
-                            <img className="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt=""/>
+                            {/* <img className="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt=""/> */}
                             <h5 className="m-0">Rohit Mourya</h5>
                             <span>HR</span>
                         </div>
@@ -547,7 +548,7 @@ const HomePage = () => {
             <div className="row pb-3">
                 <div className="col-lg-4 mb-4">
                     <div className="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/live classes.jpg" alt=""/>
+                        <Image width={400} height={100} className="img-fluid" src="/img/live classes.jpg" alt=""/>
                         <a className="blog-overlay text-decoration-none" href="">
                             <h5 className="text-white mb-3">Our Live video classNamees allows students to watch content at home
                                 and attend lectures remotely.</h5>
@@ -557,7 +558,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 mb-4">
                     <div className="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/recorded.jpg" alt=""/>
+                    <Image width={400} height={100} className="img-fluid" src="/img/recorded.jpg" alt=""/>
                         <a className="blog-overlay text-decoration-none" href="">
                             <h5 className="text-white mb-3">Our Recorded classNamees can be access by the students enrolled in
                                 the course at any time, as long as the course is active and available.</h5>
@@ -567,7 +568,7 @@ const HomePage = () => {
                 </div>
                 <div className="col-lg-4 mb-4">
                     <div className="blog-item position-relative overflow-hidden rounded mb-2">
-                        <img className="img-fluid" src="img/call.jpg" alt=""/>
+                    <Image width={400} height={100} className="img-fluid" src="/img/call.jpg" alt=""/>
                         <a className="blog-overlay text-decoration-none" href="">
                             <h5 className="text-white mb-3">We provide Call Support to our students all days and every time when they need</h5>
                             <p className="text-primary m-0">24*7 Call Support</p>
@@ -629,7 +630,7 @@ const HomePage = () => {
                 <p>Stay Updated with Us<br/>
                     Subscribe to our monthly newsletter to get the latest updates, exclusive content, and special offers
                     delivered straight to your inbox. Stay informed about our newest products, upcoming events, and
-                    expert insights. Join our community and never miss out on what's happening!</p>
+                    expert insights. Join our community and never miss out on what &apos; s happening!</p>
                 <div className="w-100">
                     <div className="input-group">
                         <input type="text" className="form-control border-light p-[30px]"

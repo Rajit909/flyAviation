@@ -5,11 +5,10 @@ import "./globals.css";
 import "/public/lib/owlcarousel/assets/owl.carousel.min.css";
 import "/public/css/style.css";
 import Script from "next/script";
-import Head from "next/head";
 
 
 export const metadata = {
-  title: "Sky Future Academy",
+  title: "Fly Aviation Academy",
   Script: "Fly in the Sky!",
 };
 
@@ -17,10 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <Head>
+        <head>
         <link href="img/favicon/flyicon.png" rel="icon"/>
 
-        </Head>
+        </head>
         <body>
           {/* <NavBar /> */}
 
