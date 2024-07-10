@@ -93,7 +93,7 @@ const Navbar = () => {
                             <Link href={"/contact"} className="nav-item nav-link ">Contact Us
                             </Link>
                         </div>
-                        <a className="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Online Admission</a>
+                        <Link className="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href={"/register"}>Online Admission</Link>
                     </div>
                 </nav>
             </div>

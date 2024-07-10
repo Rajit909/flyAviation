@@ -166,7 +166,7 @@ const Register = () => {
                       <select
                         className="custom-select border-0 px-4"
                         style={{ height: "47px" }}
-                        value="state"
+                        // value="state"
                         id="state"
                         name="state"
                       >
@@ -241,7 +241,7 @@ const Register = () => {
                         style={{ height: "47px" }}
                         id="course"
                         name="course"
-                        value="course"
+                        // value="course"
                       >
                         <option defaultValue="Select a course">
                           Select course

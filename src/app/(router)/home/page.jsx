@@ -6,9 +6,10 @@ import Hero from "../_components/Hero/Hero";
 import About from "../about/page";
 import Partners from "../_components/Partners/Partners";
 import Courses from "@/app/(router)/course/page";
-import Register from "../_components/Register";
+
 import Testemonials from "../_components/Testemonials";
 import Features from "../_components/Features";
+import Register from "../register/page";
 
 
 const HomePage = () => {
