@@ -9,7 +9,7 @@ const Register = () => {
       >
         <div className="container py-5">
           <div className="row align-items-center">
-            <div className="col-lg-7 mb-5 mb-lg-0">
+            <div className="col-lg-6 mb-5 mb-lg-0">
               <div className="mb-4">
                 <h5
                   className="text-primary text-uppercase mb-3"
@@ -40,7 +40,7 @@ const Register = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-5">
+            <div className="col-lg-6">
               <div className="card border-0">
                 <div className="card-header bg-light text-center p-4">
                   <h1 className="m-0">Register Now</h1>
@@ -73,51 +73,21 @@ const Register = () => {
                     </div>
 
                     <div className="form-group">
-                      <div className="col-md-6 mb-4 py-2 bg-light form-control-file rounded">
-                        <h6 className="mb-2 pb-1 b">Gender: </h6>
-
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="inlineRadioOptions"
-                            id="femaleGender"
-                            value="option1"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="femaleGender"
-                          >
-                            Female
-                          </label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="inlineRadioOptions"
-                            id="maleGender"
-                            value="option2"
-                          />
-                          <label className="form-check-label" for="maleGender">
-                            Male
-                          </label>
-                        </div>
-
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="inlineRadioOptions"
-                            id="otherGender"
-                            value="option3"
-                          />
-                          <label className="form-check-label" for="otherGender">
-                            Other
-                          </label>
-                        </div>
-                      </div>
+                    <div className="form-group">
+                      <select
+                        className="custom-select border-0 px-4"
+                        style={{ height: "47px" }}
+                        id="gender"
+                        name="gender"
+                      >
+                        <option defaultValue="Select Qualification">
+                          Select Gender
+                        </option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
                     </div>
 
                     <div className="form-group">
@@ -145,35 +115,35 @@ const Register = () => {
                         <option defaultValue="Select Qualification">
                           Select Qualification
                         </option>
-                        <option value="1">High School</option>
-                        <option value="2">Intermediate</option>
-                        <option value="3">Diploma</option>
-                        <option value="4">Graduation</option>
-                        <option value="5">Post-Graduation</option>
+                        <option value="High School">High School</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="Post-Graduation">Post-Graduation</option>
                       </select>
                     </div>
 
                     <div className="form-group">
-                      <div className="col-md-6 mb-4 py-2 bg-light form-control-file rounded">
+                      <div className="pl-4 mb-4 py-4 bg-light form-control-file rounded">
                         <h6 className="mb-2 pb-1 b">Upload Aadhar </h6>
                         <input type="file" name="aadhar" id="aadhar" required />
                       </div>
                     </div>
                     <div className="form-group">
-                      <div className="col-md-6 mb-4 py-2 bg-light form-control-file rounded">
+                      <div className="pl-4 mb-4 py-4 bg-light form-control-file rounded">
                         <h6 className="mb-2 pb-1 b">X MarkSheet </h6>
                         <input type="file" name="aadhar" id="aadhar" required />
                       </div>
                     </div>
                     <div className="form-group">
-                      <div className="col-md-6 mb-4 py-2 bg-light form-control-file rounded">
+                      <div className=" mb-4 pl-4 py-4 bg-light form-control-file rounded">
                         <h6 className="mb-2 pb-1 b">XII MarkSheet </h6>
                         <input type="file" name="aadhar" id="aadhar" required />
                       </div>
                     </div>
 
                     <div className="form-group">
-                      <div className="col-md-6 mb-4 py-2 bg-light form-control-file rounded">
+                      <div className=" mb-4 pl-4 py-4 bg-light form-control-file rounded">
                         <h6 className="mb-2 pb-1 b">Upload Aadhar </h6>
                         <input type="file" name="aadhar" id="aadhar" required />
                       </div>
@@ -198,6 +168,7 @@ const Register = () => {
                         style={{ height: "47px" }}
                         value="state"
                         id="state"
+                        name="state"
                       >
                         <option defaultValue="Select State">
                             Select State
@@ -268,25 +239,28 @@ const Register = () => {
                       <select
                         className="custom-select border-0 px-4"
                         style={{ height: "47px" }}
+                        id="course"
+                        name="course"
+                        value="course"
                       >
                         <option defaultValue="Select a course">
                           Select course
                         </option>
-                        <option value="1">Diploma in Hotel Management</option>
-                        <option value="2">Diploma in Air hostess</option>
-                        <option value="3">Diploma in Cabin crew</option>
-                        <option value="4">Diploma in Airport Management</option>
-                        <option value="5">
+                        <option value="Diploma in Hotel Management">Diploma in Hotel Management</option>
+                        <option value="Diploma in Air hostess">Diploma in Air hostess</option>
+                        <option value="Diploma in Cabin crew">Diploma in Cabin crew</option>
+                        <option value="Diploma in Airport Management">Diploma in Airport Management</option>
+                        <option value="Diploma in Travel & Tourism Management">
                           Diploma in Travel & Tourism Management
                         </option>
-                        <option value="6">
+                        <option value="Diploma in Human Resources Management">
                           Diploma in Human Resources Management
                         </option>
-                        <option value="7">
+                        <option value="Diploma in Marketing Management">
                           Diploma in Marketing Management
                         </option>
-                        <option value="8">Diploma in Metro Management</option>
-                        <option value="9">Diploma in Web Designing</option>
+                        <option value="Diploma in Metro Management">Diploma in Metro Management</option>
+                        <option value="Diploma in Web Designing">Diploma in Web Designing</option>
                       </select>
                     </div>
                     <div>
