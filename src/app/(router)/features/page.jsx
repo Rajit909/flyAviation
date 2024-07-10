@@ -5,7 +5,7 @@ import Register from '../_components/Register'
 const page = () => {
   return (
     <>
-        <Features/>
+        {/* <Features/> */}
         <Register/>
     </>
   )
