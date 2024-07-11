@@ -77,9 +77,9 @@ const Navbar = () => {
                     <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div className="collapse navbar-collapse justify-content-between " id="navbarCollapse">
                         <div className="navbar-nav py-4">
-                            <Link href={"/"} className="nav-item nav-link active pt-4">Home
+                            <Link href={"/"} className="nav-item nav-link active">Home
                             </Link>
                             <Link href={"/course"} className="nav-item nav-link ">Courses
                             </Link>
