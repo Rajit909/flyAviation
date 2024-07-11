@@ -68,7 +68,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Cabin crew</a>
+                            <a className="h5" href="/register">Diploma in Cabin crew</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -90,7 +90,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Airport Management</a>
+                            <a className="h5" href="/register">Diploma in Airport Management</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -112,7 +112,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Travel & Tourism Management</a>
+                            <a className="h5" href="/register">Diploma in Travel & Tourism Management</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -134,7 +134,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Human Resources Management</a>
+                            <a className="h5" href="/register">Diploma in Human Resources Management</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -156,7 +156,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Marketing Management</a>
+                            <a className="h5" href="/register">Diploma in Marketing Management</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -178,7 +178,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Metro Management</a>
+                            <a className="h5" href="/register">Diploma in Metro Management</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
@@ -200,7 +200,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Web<br/> Designing</a>
+                            <a className="h5" href="/register">Diploma in Web<br/> Designing</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
