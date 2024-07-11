@@ -46,7 +46,7 @@ function Courses() {
                                 <small className="m-0"><i className="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 {/* <small className="m-0"><i className="far fa-clock text-primary mr-2"></i>01h 30m</small> */}
                             </div>
-                            <a className="h5" href="">Diploma in Air hostess</a>
+                            <a className="h5" href="/register">Diploma in Air hostess</a>
                             <div className="border-top mt-4 pt-4">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="m-0"><i className="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small>
