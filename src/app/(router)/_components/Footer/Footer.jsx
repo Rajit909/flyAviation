@@ -69,7 +69,7 @@ const Footer = () => {
         style={{borderColor: "rgba(256, 256, 256, .1) !important"}}>
         <div className="row">
             <div className="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p className="m-0 text-white">&copy; <a href="#">flyaviationacademy</a><br/> All Rights Reserved <a href="https://flyaviationacademy.com/">Fly Aviation Institute India Pvt. Ltd.</a>
+                <p className="m-0 text-white">&copy; <a href="/">flyaviationacademy</a><br/> All Rights Reserved 
                 </p>
             </div>
             <div className="col-lg-6 text-center text-md-right">
