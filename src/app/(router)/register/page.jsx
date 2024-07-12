@@ -94,7 +94,7 @@ const Register = () => {
         style={{ margin: "90px 0" }}
       >
         <div className="container py-5">
-          <div className="grid grid-cols-1 md-grid-cols-2">
+          <div className="">
             <div className="">
               <div className="mb-4">
                 <h5
@@ -435,8 +435,9 @@ const Register = () => {
                         </select>
                       </div>
                       </div>
+                      <div className="col-md-4">  </div>
 
-                      <div className="col-md-4">                    
+                      <div className="col-md-4 mt-2">                    
                         <button
                           className="btn btn-dark btn-block border-0 py-3"
                           type="submit"
@@ -444,6 +445,8 @@ const Register = () => {
                           Register Now
                         </button>
                       </div>
+                      <div className="col-md-4">  </div>
+
                     </div>
                   </form>
                 </div>

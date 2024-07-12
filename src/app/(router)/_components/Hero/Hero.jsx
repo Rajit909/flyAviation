@@ -13,7 +13,7 @@ const Hero = () => {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active" style={{minHeight: "300px"}}>
-                    <Image className="position-relative w-100" src="/img/slider/slider2.jpg" width={500} height={500}
+                    <Image className="position-relative w-100" src="/img/slider/slider3.jpg" fill={true}
                         style={{minHeight: "300px", objectFit: "cover"}}/>
                     {/* <!-- <div className="carousel-caption d-flex align-items-center justify-content-center">
                         <div className="p-5" style="width: 100%; max-width: 900px;">

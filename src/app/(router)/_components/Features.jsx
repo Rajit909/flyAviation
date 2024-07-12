@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Features = () => {
@@ -39,6 +40,14 @@ const Features = () => {
                             <p className="text-primary m-0">24*7 Call Support</p>
                         </a>
                     </div>
+                </div>
+                <div className='d-flex justify-content-center align-items-center ml-4'>
+
+                <Link href={"/course"} >
+                    <button className='btn btn-warning border border-dark'>
+                    Explore Our Courses
+                    </button>
+                </Link>
                 </div>
             </div>
         </div>
