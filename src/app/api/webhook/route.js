@@ -18,6 +18,7 @@ export async function POST(req) {
 
   if (isValid) {
     const event = JSON.parse(body);
+    console.log(event)
 
     if (event.event === 'payment.captured') {
       const payment = event.payload.payment.entity;
@@ -43,6 +44,8 @@ export async function POST(req) {
         subject: 'Payment Receipt | from Fly aviation Academy.',
         text: receipt,
       };
+      console.log(payment.notes.email)
+
 
       try { 
         await transporter.sendMail(mailOptions);
