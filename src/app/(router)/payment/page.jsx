@@ -17,14 +17,14 @@ const CourseFeeCalculator = () => {
     }, []);
 
     const courses = [
-        { name: 'Diploma in Hotel Management', fee: 40000 },
-        { name: 'Diploma in Air hostess', fee: 40000 },
+        { name: 'Diploma in Hotel Management', fee: 45000 },
+        { name: 'Diploma in Air hostess', fee: 50000 },
         { name: 'Diploma in Cabin crew', fee: 40000 },
-        { name: 'Diploma in Airport Management', fee: 40000 },
+        { name: 'Diploma in Airport Management', fee: 39000 },
         { name: 'Diploma in Travel & Tourism Management', fee: 40000 },
-        { name: 'Diploma in Human Resources Management', fee: 40000 },
-        { name: 'Diploma in Marketing Management', fee: 40000 },
-        { name: 'Diploma in Web Designing', fee: 40000 },
+        { name: 'Diploma in Human Resources Management', fee: 20000 },
+        { name: 'Diploma in Marketing Management', fee: 30000 },
+        { name: 'Diploma in Web Designing', fee: 35000 },
         { name: 'Diploma in Metro Management', fee: 40000 },
     ];
 
