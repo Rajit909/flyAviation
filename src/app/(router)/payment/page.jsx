@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 const CourseFeeCalculator = () => {
   const [selectedCourse, setSelectedCourse] = useState('');
@@ -103,11 +104,13 @@ const courses = [
       order_id: order.id,
       handler: async (response) => {
         // Payment was successful
-        alert(`Payment successful.  Transaction ID: ${response.razorpay_payment_id}`);
+        // alert(`Payment successful.  Transaction ID: ${response.razorpay_payment_id}`);
+        toast("Payment successful.  Transaction ID: "+response.razorpay_payment_id)
       },
       prefill: {
         name: name,
         email: email,
+        contact: '9999999999',
       },
       theme: {
         color: '#3399cc',
@@ -120,7 +123,7 @@ const courses = [
 
   return (
     <div className="container mt-5 p-4 bg-white border border-secondry rounded shadow-sm">
-      <h2 className="h4 font-weight-bold mb-4">Calculate Course Fee</h2>
+      <h2 className="h4 font-weight-bold mb-4">Pay your fee to complete registration.</h2>
       <form id="paymentForm">
         <div className="form-group mb-3">
           <label htmlFor="course" className="text-dark mb-2">Select Course</label>
