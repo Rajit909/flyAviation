@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useEffect } from 'react';
 
 const CourseFeeCalculator = () => {
@@ -9,6 +10,9 @@ const CourseFeeCalculator = () => {
   const [totalFee, setTotalFee] = useState(0);
   const [installments, setInstallments] = useState([]);
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
@@ -16,7 +20,8 @@ const CourseFeeCalculator = () => {
     document.body.appendChild(script);
   }, []);
 
-  const courses = [
+
+const courses = [
     { name: 'Diploma in Hotel Management', fee: 45000 },
     { name: 'Diploma in Air hostess', fee: 50000 },
     { name: 'Diploma in Cabin crew', fee: 40000 },
@@ -56,7 +61,7 @@ const CourseFeeCalculator = () => {
 
     setEmiOptions(emiOptions);
   };
-  console.log(totalFee)
+
   const handleEmiChange = (e) => {
     const selectedEmi = e.target.value;
     setSelectedEmi(selectedEmi);
@@ -66,7 +71,7 @@ const CourseFeeCalculator = () => {
       setTotalFee(monthlyInstallment);
       displayInstallments(monthlyInstallment, duration);
     } else {
-      setTotalFee(fee);
+      setTotalFee(monthlyInstallment);
       setInstallments([]);
     }
   };
@@ -85,27 +90,24 @@ const CourseFeeCalculator = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ amount: totalFee }),
+      body: JSON.stringify({ amount: totalFee,name: name, email: email }),
     });
     const order = await response.json();
-    
+
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // client-side key
       amount: order.amount,
       currency: 'INR',
-      name: 'Course Fee',
+      name: 'FlyAviation Academy: Course Fee Payment',
       description: 'Payment for selected course',
       order_id: order.id,
-      handler: (response) => {
-        alert(`Payment successful: ${response.razorpay_payment_id}`);
+      handler: async (response) => {
+        // Payment was successful
+        alert(`Payment successful.  Transaction ID: ${response.razorpay_payment_id}`);
       },
       prefill: {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        contact: '9999999999',
-      },
-      notes: {
-        address: 'Razorpay Corporate Office',
+        name: name,
+        email: email,
       },
       theme: {
         color: '#3399cc',
@@ -148,11 +150,24 @@ const CourseFeeCalculator = () => {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="installments" className="text-dark mb-2">Installments</label>
-          <div id="installments" className="border border-dark rounded p-4">
+          <div id="installments" className="border border-secondry rounded p-3">
             {installments.map((installment, index) => (
               <div key={index}>{installment}</div>
             ))}
           </div>
+        </div>
+        <div className='border border-secondry rounded p-3 mb-2'>
+        <small id="passwordHelpBlock" className="form-text text-warning">
+        Enter name and Email to recive a recipt on your mail.
+        </small>
+        <div className="form-group mb-3">
+          <label htmlFor="name" className="text-dark mb-2">Name</label>
+          <input type="text" id="name" name="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} required placeholder='Enter full name'/>
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="email" className="text-dark mb-2">Email</label>
+          <input type="email" id="email" name="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder='Enter your email'/>
+        </div>
         </div>
         <button type="button" className="btn btn-primary" onClick={handlePayment}>Pay Now</button>
       </form>
