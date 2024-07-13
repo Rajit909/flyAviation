@@ -148,7 +148,7 @@ const CourseFeeCalculator = () => {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="installments" className="text-dark mb-2">Installments</label>
-          <div id="installments" className="border border-dark rounded p-2">
+          <div id="installments" className="border border-dark rounded p-4">
             {installments.map((installment, index) => (
               <div key={index}>{installment}</div>
             ))}
