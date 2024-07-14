@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+/.env
 
 
 # testing
@@ -14,7 +15,7 @@
 publicOne
 routers
 
-/.env
+
 
 
 # next.js
