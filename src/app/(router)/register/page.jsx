@@ -77,10 +77,10 @@ const Register = () => {
         Object.keys(userData).forEach((key) => {
           setUserData((prevData) => ({ ...prevData, [key]: " " }));
         });
-        setPhotoFile("");
-        setAadharFile("");
-        setHighmarkFile("");
-        setIntermarkFile("");
+        setPhotoFile(null);
+        setAadharFile(null);
+        setHighmarkFile(null)
+        setIntermarkFile(null)
 
          // Redirect to payment page
          router.push('/payment');
