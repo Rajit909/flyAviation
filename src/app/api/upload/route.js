@@ -115,10 +115,10 @@ export async function POST(request) {
     await transporter.sendMail(mailOptions);
 
     // cleanup files
-    fs.unlinkSync(photoPath);
-    fs.unlinkSync(aadharPath);
-    fs.unlinkSync(highmarkPath);
-    fs.unlinkSync(intermarkPath);
+    // fs.unlinkSync(photoPath);
+    // fs.unlinkSync(aadharPath);
+    // fs.unlinkSync(highmarkPath);
+    // fs.unlinkSync(intermarkPath);
 
 
 

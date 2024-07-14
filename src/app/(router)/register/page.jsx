@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Register = () => {
@@ -6,6 +7,9 @@ const Register = () => {
   const [aadharFile, setAadharFile] = useState(null);
   const [highmarkFile, setHighmarkFile] = useState(null);
   const [intermarkFile, setIntermarkFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
 
   const [userData, setUserData] = useState({
     name: "",
@@ -47,6 +51,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append("photo", photoFile);
@@ -76,6 +81,10 @@ const Register = () => {
         setAadharFile("");
         setHighmarkFile("");
         setIntermarkFile("");
+
+         // Redirect to payment page
+         router.push('/payment');
+
       } else {
         alert("Failed to submit Application.");
       }
@@ -83,7 +92,7 @@ const Register = () => {
       console.log("Error Submitting form", error);
       alert("An error while submitting form. Please try again!");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -442,7 +451,7 @@ const Register = () => {
                           className="btn btn-dark btn-block border-0 py-3"
                           type="submit"
                         >
-                          Register Now
+                         {isLoading ? "Please wait" : "Register Now"}
                         </button>
                       </div>
                       <div className="col-md-4">  </div>
