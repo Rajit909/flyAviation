@@ -451,7 +451,20 @@ const Register = () => {
                           className="btn btn-dark btn-block border-0 py-3"
                           type="submit"
                         >
-                         {isLoading ? "Please wait" : "Register Now"}
+
+                          {isLoading ? 
+                                   <div className="text-md">
+
+                                   <span
+                                   className="spinner-border spinner-border-sm mb-1 mr-2"
+                                   role="status"
+                                   aria-hidden="true"
+                                   ></span>
+                                 Please wait...
+                                   </div>
+                                   : 
+                                   'Register now'}
+
                         </button>
                       </div>
                       <div className="col-md-4">  </div>
