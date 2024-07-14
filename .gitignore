@@ -6,6 +6,10 @@
 .pnp.js
 .yarn/install-state.gz
 /.env
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f4ee6a77dd3611003715eb4260665559e01aba6
 
 # testing
 /coverage
@@ -14,6 +18,10 @@
 publicOne
 routers
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f4ee6a77dd3611003715eb4260665559e01aba6
 
 
 # next.js
