@@ -13,6 +13,7 @@
 publicOne
 routers
 
+/.env
 
 
 # next.js
