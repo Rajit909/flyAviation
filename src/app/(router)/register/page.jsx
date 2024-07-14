@@ -77,13 +77,13 @@ const Register = () => {
         Object.keys(userData).forEach((key) => {
           setUserData((prevData) => ({ ...prevData, [key]: " " }));
         });
-        setPhotoFile(null);
-        setAadharFile(null);
-        setHighmarkFile(null)
-        setIntermarkFile(null)
+        setPhotoFile("");
+        setAadharFile("");
+        setHighmarkFile("");
+        setIntermarkFile("");
 
          // Redirect to payment page
-         router.push('/payment');
+        router.push('/payment');
 
       } else {
         alert("Failed to submit Application.");
