@@ -76,7 +76,7 @@ export async function POST(request) {
     const mailOptions = {
       from: process.env.EMAIL_USER, // Sender address (your Hostinger email)
       to: process.env.EMAIL_TO, // Recipient address
-      subject: 'New Admission Application- FlyAviation Academy.', // Subject line
+      subject: 'New Job Application - from Vande Bharat Airways', // Subject line
       text: `
         Name: ${name}
         Father's Name: ${fname}
@@ -114,7 +114,15 @@ export async function POST(request) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-  
+    // cleanup files
+    // fs.unlinkSync(photoPath);
+    // fs.unlinkSync(aadharPath);
+    // fs.unlinkSync(highmarkPath);
+    // fs.unlinkSync(intermarkPath);
+
+
+
+    
     
     // Return a success response
     return NextResponse.json({ success: true, message: 'Application submitted successfully!' }, { status: 200 });
