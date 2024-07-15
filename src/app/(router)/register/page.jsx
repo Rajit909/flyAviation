@@ -67,9 +67,9 @@ const Register = () => {
         body: formData,
       });
 
-      // if (!response.ok) {
-      //   throw new Error("Network response not Found?");
-      // }
+      if (!response.ok) {
+        throw new Error("Network response not Found?");
+      }
 
       const result = await response.json();
       if (result.success) {
