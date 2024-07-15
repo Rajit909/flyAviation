@@ -114,15 +114,7 @@ export async function POST(request) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    // cleanup files
-    // fs.unlinkSync(photoPath);
-    // fs.unlinkSync(aadharPath);
-    // fs.unlinkSync(highmarkPath);
-    // fs.unlinkSync(intermarkPath);
-
-
-
-    
+  
     
     // Return a success response
     return NextResponse.json({ success: true, message: 'Application submitted successfully!' }, { status: 200 });
