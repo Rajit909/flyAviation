@@ -115,12 +115,12 @@ const Register = () => {
                 <h1 className="text-white">10% Off For New Students</h1>
               </div>
               <p className="text-white">
-                Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
+                {/* Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
                 dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
                 Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                dolor
+                dolor */}
               </p>
-              <ul className="list-inline text-white m-0">
+              {/* <ul className="list-inline text-white m-0">
                 <li className="py-2">
                   <i className="fa fa-check text-primary mr-3"></i>Labore eos
                   amet dolor amet diam
@@ -133,7 +133,7 @@ const Register = () => {
                   <i className="fa fa-check text-primary mr-3"></i>Diam dolor
                   diam elitripsum vero.
                 </li>
-              </ul>
+              </ul> */}
             </div>
             <div className="">
               <div className="card border-0">
@@ -259,11 +259,12 @@ const Register = () => {
                       <div className="col-md-6">
                       <div className="form-group">
                         <div className="pl-4 mb-4 py-4 bg-light form-control-file rounded">
-                          <h6 className="mb-2 pb-1 b">Upload Aadhar </h6>
+                          <p className="mb-2 pb-1 b">Upload Aadhar </p>
                           <input
                             type="file"
                             id="aadhar"
                             name="aadhar"
+                            className="form-control-file"
                             onChange={handleAadharfileChange}
                             required
                           />
@@ -277,6 +278,7 @@ const Register = () => {
                           <input
                             type="file"
                             id="highmark"
+                            className="form-control-file"
                             name="highmark"
                             onChange={handleHighmarkfileChange}
                             // required
@@ -291,6 +293,7 @@ const Register = () => {
                           <input
                             type="file"
                             id="intermark"
+                            className="form-control-file"
                             name="intermark"
                             onChange={handleIntermarkfileChange}
                             // required
@@ -305,6 +308,7 @@ const Register = () => {
                           <input
                             type="file"
                             id="photo"
+                            className="form-control-file"
                             name="photo"
                             onChange={handlePhotofileChange}
                             // required
