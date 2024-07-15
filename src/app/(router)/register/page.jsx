@@ -155,7 +155,7 @@ const Register = () => {
                             value={userData.name}
                             onChange={handleChange}
                             placeholder="Your name"
-                            required="required"
+                            required
                           />
                         </div>
                       </div>
@@ -169,7 +169,7 @@ const Register = () => {
                             value={userData.fname}
                             onChange={handleChange}
                             placeholder="Father's name"
-                            required="required"
+                            required
                           />
                         </div>
                       </div>
@@ -184,7 +184,7 @@ const Register = () => {
                           value={userData.mname}
                           onChange={handleChange}
                           placeholder="Mother's name"
-                          required="required"
+                          required
                         />
                       </div>
                       </div>
@@ -218,7 +218,7 @@ const Register = () => {
                           value={userData.email}
                           onChange={handleChange}
                           placeholder="Your email"
-                          required="required"
+                          required
                         />
                       </div>
                       </div>
@@ -232,7 +232,7 @@ const Register = () => {
                           value={userData.phone}
                           onChange={handleChange}
                           placeholder="Phone"
-                          required="required"
+                          required
                         />
                       </div>
                       </div>
