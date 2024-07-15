@@ -114,12 +114,12 @@ const Register = () => {
                 </h5>
                 <h1 className="text-white">10% Off For New Students</h1>
               </div>
-              <p className="text-white">
-                {/* Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
+              {/* <p className="text-white">
+                Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
                 dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
                 Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                dolor */}
-              </p>
+                dolor
+              </p> */}
               {/* <ul className="list-inline text-white m-0">
                 <li className="py-2">
                   <i className="fa fa-check text-primary mr-3"></i>Labore eos
@@ -281,7 +281,7 @@ const Register = () => {
                             className="form-control-file"
                             name="highmark"
                             onChange={handleHighmarkfileChange}
-                            // required
+                            required
                           />
                         </div>
                       </div>
@@ -296,7 +296,7 @@ const Register = () => {
                             className="form-control-file"
                             name="intermark"
                             onChange={handleIntermarkfileChange}
-                            // required
+                            required
                           />
                         </div>
                       </div>
@@ -311,7 +311,7 @@ const Register = () => {
                             className="form-control-file"
                             name="photo"
                             onChange={handlePhotofileChange}
-                            // required
+                            required
                           />
                         </div>
                       </div>
@@ -335,7 +335,6 @@ const Register = () => {
                         <select
                           className="custom-select border-0 px-4"
                           style={{ height: "47px" }}
-                          // value="state"
                           id="state"
                           name="state"
                           value={userData.state}

@@ -2,6 +2,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
+import { AOSInit } from "@/components/ui/AOS";
 import "/public/lib/owlcarousel/assets/owl.carousel.min.css";
 import "/public/css/style.css";
 import Script from "next/script";
@@ -23,8 +24,11 @@ export default function RootLayout({ children }) {
 
         </head>
         <body>
+          
           <Navbar/>
 
+          {/* aos lib */}
+          <AOSInit/>
           <main>{children}</main>
           <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="fa fa-angle-double-up"></i></a>
           <Toaster />
