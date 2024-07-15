@@ -62,7 +62,7 @@ const Register = () => {
         formData.append(key, userData[key]);
       });
 
-      const response = await fetch("/api/upload-from", {
+      const response = await fetch("/api/upload-form", {
         method: "POST",
         body: formData,
       });
