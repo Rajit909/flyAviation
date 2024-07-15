@@ -472,8 +472,6 @@ const Register = () => {
 
                         </button>
                       </div>
-                      <div className="col-md-4">  </div>
-
                     </div>
                   </form>
                 </div>
