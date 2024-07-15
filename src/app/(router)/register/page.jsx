@@ -7,7 +7,7 @@ const Register = () => {
   const [aadharFile, setAadharFile] = useState(null);
   const [highmarkFile, setHighmarkFile] = useState(null);
   const [intermarkFile, setIntermarkFile] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
@@ -51,7 +51,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append("photo", photoFile);
@@ -91,8 +91,6 @@ const Register = () => {
     } catch (error) {
       console.log("Error Submitting form", error);
       alert("An error while submitting form. Please try again!");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -454,7 +452,7 @@ const Register = () => {
                           className="btn btn-dark btn-block border-0 py-3"
                           type="submit"
                         >
-
+{/* 
                           {isLoading ? 
                                    <div className="text-md">
 
@@ -466,7 +464,8 @@ const Register = () => {
                                  Please wait...
                                    </div>
                                    : 
-                                   'Register now'}
+                                   'Register now'} */}
+                                   register
 
                         </button>
                       </div>
