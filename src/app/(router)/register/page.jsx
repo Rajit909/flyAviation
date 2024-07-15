@@ -103,7 +103,7 @@ const Register = () => {
         style={{ margin: "90px 0" }}
       >
         <div className="container py-5">
-          <div className="">
+          <div className="" data-aos="fade-right">
             <div className="">
               <div className="mb-4">
                 <h5

@@ -4,7 +4,7 @@ import React from 'react'
 const About = () => {
   return (
     <>
-    <div className="container-fluid py-5">
+    <div className="container-fluid py-5" data-aos="fade-left">
         <div className="container py-5">
             <div className="row align-items-center">
                 <div className="col-lg-5">

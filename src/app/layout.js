@@ -8,6 +8,7 @@ import "/public/css/style.css";
 import Script from "next/script";
 import Navbar from "./(router)/_components/Navbar/Navbar";
 import Footer from "./(router)/_components/Footer/Footer";
+import NextTopLoader from "nextjs-toploader"
 
 
 export const metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
 
         </head>
         <body>
-          
+          <NextTopLoader color="#000" showSpinner={false}/>
           <Navbar/>
 
           {/* aos lib */}

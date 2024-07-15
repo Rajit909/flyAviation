@@ -5,7 +5,7 @@ import React from 'react'
 function Courses() {
   return (
     <>
-     <div className="container-fluid py-5">
+     <div className="container-fluid py-5" data-aos="fade-left">
         <div className="container py-5">
             <div className="text-center mb-5">
                 <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: "5px"}}>Courses</h5>
