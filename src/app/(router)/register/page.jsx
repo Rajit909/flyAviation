@@ -7,7 +7,7 @@ const Register = () => {
   const [aadharFile, setAadharFile] = useState(null);
   const [highmarkFile, setHighmarkFile] = useState(null);
   const [intermarkFile, setIntermarkFile] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
@@ -51,7 +51,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setIsLoading(true);
+    setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append("photo", photoFile);
@@ -91,10 +91,9 @@ const Register = () => {
     } catch (error) {
       console.log("Error Submitting form", error);
       alert("An error while submitting form. Please try again!");
+    } finally {
+      setIsLoading(false);
     }
-    //  finally {
-    //   setIsLoading(false);
-    // }
   };
 
   return (
@@ -104,7 +103,7 @@ const Register = () => {
         style={{ margin: "90px 0" }}
       >
         <div className="container py-5">
-          <div className="" data-aos="fade-right">
+          <div className="">
             <div className="">
               <div className="mb-4">
                 <h5
@@ -115,13 +114,13 @@ const Register = () => {
                 </h5>
                 <h1 className="text-white">10% Off For New Students</h1>
               </div>
-              {/* <p className="text-white">
+              <p className="text-white">
                 Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
                 dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
                 Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
                 dolor
-              </p> */}
-              {/* <ul className="list-inline text-white m-0">
+              </p>
+              <ul className="list-inline text-white m-0">
                 <li className="py-2">
                   <i className="fa fa-check text-primary mr-3"></i>Labore eos
                   amet dolor amet diam
@@ -134,7 +133,7 @@ const Register = () => {
                   <i className="fa fa-check text-primary mr-3"></i>Diam dolor
                   diam elitripsum vero.
                 </li>
-              </ul> */}
+              </ul>
             </div>
             <div className="">
               <div className="card border-0">
@@ -155,7 +154,7 @@ const Register = () => {
                             value={userData.name}
                             onChange={handleChange}
                             placeholder="Your name"
-                            required
+                            required="required"
                           />
                         </div>
                       </div>
@@ -169,7 +168,7 @@ const Register = () => {
                             value={userData.fname}
                             onChange={handleChange}
                             placeholder="Father's name"
-                            required
+                            required="required"
                           />
                         </div>
                       </div>
@@ -184,7 +183,7 @@ const Register = () => {
                           value={userData.mname}
                           onChange={handleChange}
                           placeholder="Mother's name"
-                          required
+                          required="required"
                         />
                       </div>
                       </div>
@@ -218,7 +217,7 @@ const Register = () => {
                           value={userData.email}
                           onChange={handleChange}
                           placeholder="Your email"
-                          required
+                          required="required"
                         />
                       </div>
                       </div>
@@ -232,7 +231,7 @@ const Register = () => {
                           value={userData.phone}
                           onChange={handleChange}
                           placeholder="Phone"
-                          required
+                          required="required"
                         />
                       </div>
                       </div>
@@ -260,12 +259,11 @@ const Register = () => {
                       <div className="col-md-6">
                       <div className="form-group">
                         <div className="pl-4 mb-4 py-4 bg-light form-control-file rounded">
-                          <p className="mb-2 pb-1 b">Upload Aadhar </p>
+                          <h6 className="mb-2 pb-1 b">Upload Aadhar </h6>
                           <input
                             type="file"
                             id="aadhar"
                             name="aadhar"
-                            className="form-control-file"
                             onChange={handleAadharfileChange}
                             required
                           />
@@ -279,10 +277,9 @@ const Register = () => {
                           <input
                             type="file"
                             id="highmark"
-                            className="form-control-file"
                             name="highmark"
                             onChange={handleHighmarkfileChange}
-                            required
+                            // required
                           />
                         </div>
                       </div>
@@ -294,10 +291,9 @@ const Register = () => {
                           <input
                             type="file"
                             id="intermark"
-                            className="form-control-file"
                             name="intermark"
                             onChange={handleIntermarkfileChange}
-                            required
+                            // required
                           />
                         </div>
                       </div>
@@ -309,10 +305,9 @@ const Register = () => {
                           <input
                             type="file"
                             id="photo"
-                            className="form-control-file"
                             name="photo"
                             onChange={handlePhotofileChange}
-                            required
+                            // required
                           />
                         </div>
                       </div>
@@ -336,6 +331,7 @@ const Register = () => {
                         <select
                           className="custom-select border-0 px-4"
                           style={{ height: "47px" }}
+                          // value="state"
                           id="state"
                           name="state"
                           value={userData.state}
@@ -456,7 +452,7 @@ const Register = () => {
                           type="submit"
                         >
 
-                          {/* {isLoading ? 
+                          {isLoading ? 
                                    <div className="text-md">
 
                                    <span
@@ -467,11 +463,12 @@ const Register = () => {
                                  Please wait...
                                    </div>
                                    : 
-                                   'Register now'} */}
-                                   Register now
+                                   'Register now'}
 
                         </button>
                       </div>
+                      <div className="col-md-4">  </div>
+
                     </div>
                   </form>
                 </div>
