@@ -1,5 +1,5 @@
 "use client";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Register = () => {
@@ -7,9 +7,9 @@ const Register = () => {
   const [aadharFile, setAadharFile] = useState(null);
   const [highmarkFile, setHighmarkFile] = useState(null);
   const [intermarkFile, setIntermarkFile] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // const router = useRouter();
+  const router = useRouter();
 
   const [userData, setUserData] = useState({
     name: "",
@@ -51,7 +51,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setIsLoading(true);
+    setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append("photo", photoFile);
@@ -62,7 +62,7 @@ const Register = () => {
         formData.append(key, userData[key]);
       });
 
-      const response = await fetch("/api/upload-form", {
+      const response = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
@@ -83,7 +83,7 @@ const Register = () => {
         setIntermarkFile("");
 
          // Redirect to payment page
-        // router.push('/payment');
+        router.push('/payment');
 
       } else {
         alert("Failed to submit Application.");
@@ -91,10 +91,9 @@ const Register = () => {
     } catch (error) {
       console.log("Error Submitting form", error);
       alert("An error while submitting form. Please try again!");
+    } finally {
+      setIsLoading(false);
     }
-    //  finally {
-    //   setIsLoading(false);
-    // }
   };
 
   return (
@@ -453,7 +452,7 @@ const Register = () => {
                           type="submit"
                         >
 
-                          {/* {isLoading ? 
+                          {isLoading ? 
                                    <div className="text-md">
 
                                    <span
@@ -464,8 +463,7 @@ const Register = () => {
                                  Please wait...
                                    </div>
                                    : 
-                                   'Register now'} */}
-                                   Register
+                                   'Register now'}
 
                         </button>
                       </div>
