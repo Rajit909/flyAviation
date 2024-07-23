@@ -1,5 +1,4 @@
 "use client";
-import { Loader } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { React, useState } from "react";
 
@@ -12,6 +11,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  
 
   const handleInputs = (e) => {
     const { id, value } = e.target;
@@ -24,10 +24,9 @@ const Contact = () => {
     setIsPending(true);
     try {
       const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("subject", subject);
-      formData.append("message", message);
+      Object.keys(userData).forEach((key)=>{
+        formData.append(key, userData[key])
+      })
 
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -37,12 +36,10 @@ const Contact = () => {
       const data = await res.json();
       if (data.success) {
         alert("Message Sent");
-        setUserData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+        Object.keys(userData).forEach((key)=>{
+          setUserData((prevData)=> ({...prevData, [key]: " "}))
+        })
+
         router.push("/contact");
       } else {
         alert("Failed to submit Application.");

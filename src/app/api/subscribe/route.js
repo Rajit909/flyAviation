@@ -16,9 +16,7 @@ export async function POST(request) {
 
 
     const {
-      name,
       email,
-      message
     } = fields;
 
     console.log('EMAIL_USER:', process.env.EMAIL_USER);
@@ -42,9 +40,7 @@ export async function POST(request) {
       to: process.env.EMAIL_TO, // Recipient address
       subject: 'Contact request - from Fly Aviation Academy', // Subject line
       text: `
-        Name: ${name}
         Email: ${email}
-        Message: ${message}
         
       `,
     

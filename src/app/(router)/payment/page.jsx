@@ -55,7 +55,7 @@ const CourseFeeCalculator = () => {
   };
 
   const fetchEmiOptions = (amount) => {
-    const emiOptions = [{ duration: 3 }, { duration: 6 }, { duration: 9 }];
+    const emiOptions = [{ duration: 3 }];
 
     setEmiOptions(emiOptions);
   };

@@ -1,6 +1,51 @@
-import React from 'react'
+"use client"
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react'
 
 const Footer = () => {
+    const [isPending, setIsPending] = useState();
+    const router = useRouter();
+    const [userData, setUserData] = useState({
+      email: "",
+    });
+  
+    const handleInputs = (e) => {
+      const { id, value } = e.target;
+      setUserData((prevData) => ({ ...prevData, [id]: value }));
+    };
+    console.log(userData);
+  
+    const contactForm = async (e) => {
+      e.preventDefault();
+      setIsPending(true);
+      try {
+        const formData = new FormData();
+        Object.keys(userData).forEach((key)=>{
+          formData.append(key, userData[key])
+        })
+  
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          body: formData,
+        });
+  
+        const data = await res.json();
+        if (data.success) {
+          alert("Thanks For Subscribing Us!");
+          Object.keys(userData).forEach((key) => {
+            setUserData((prevData) => ({ ...prevData, [key]: " " }));
+          });
+          router.push("/");
+        } else {
+          alert("Failed to submit Application.");
+        }
+      } catch (error) {
+        alert("Error", error);
+      } finally {
+        setIsPending(false);
+      }
+    };
+  
   return (
     <>
     <div className="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style={{marginTop: "5px"}}>
@@ -54,13 +99,27 @@ const Footer = () => {
                     delivered straight to your inbox. Stay informed about our newest products, upcoming events, and
                     expert insights. Join our community and never miss out on what &apos; s happening!</p>
                 <div className="w-100">
-                    <div className="input-group">
-                        <input type="text" className="form-control border-light p-[30px]"
-                            placeholder="Your Email Address"/>
+                        <form className="input-group" onSubmit={contactForm}>
+
+                        <input type="email" name='email' id='email' className="form-control border-light p-[30px]"
+                            placeholder="Your Email Address" required onChange={handleInputs}/>
                         <div className="input-group-append">
-                            <button className="btn btn-primary px-4">Subscribe</button>
+                            <button className="btn btn-primary px-4">
+                            {isPending ? 
+                                   <div className="text-md">
+
+                                   <span
+                                   className="spinner-border spinner-border-sm mb-1 mr-2"
+                                   role="status"
+                                   aria-hidden="true"
+                                   ></span>
+                                 Subscribing...
+                                   </div>
+                                   : 
+                                   'Subscribe'}
+                            </button>
                         </div>
-                    </div>
+                        </form>
                 </div>
             </div>
         </div>
