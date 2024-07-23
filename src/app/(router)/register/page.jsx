@@ -112,28 +112,9 @@ const Register = () => {
                 >
                   Need Any Courses
                 </h5>
-                <h1 className="text-white">10% Off For New Students</h1>
+                <h1 className="text-white">Affordable price For New Students</h1>
               </div>
-              <p className="text-white">
-                Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-                dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-                Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                dolor
-              </p>
-              <ul className="list-inline text-white m-0">
-                <li className="py-2">
-                  <i className="fa fa-check text-primary mr-3"></i>Labore eos
-                  amet dolor amet diam
-                </li>
-                <li className="py-2">
-                  <i className="fa fa-check text-primary mr-3"></i>Etsea et sit
-                  dolor amet ipsum
-                </li>
-                <li className="py-2">
-                  <i className="fa fa-check text-primary mr-3"></i>Diam dolor
-                  diam elitripsum vero.
-                </li>
-              </ul>
+              
             </div>
             <div className="">
               <div className="card border-0">
