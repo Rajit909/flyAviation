@@ -74,7 +74,7 @@ export async function POST(request) {
     const mailOptions = {
       from: process.env.EMAIL_USER, // Sender address (your Hostinger email)
       to: process.env.EMAIL_TO, // Recipient address
-      subject: 'New Job Application - from Vande Bharat Airways', // Subject line
+      subject: 'Addmission registration - from FlyAviation Academy.', // Subject line
       text: `
         Name: ${name}
         Father's Name: ${fname}
