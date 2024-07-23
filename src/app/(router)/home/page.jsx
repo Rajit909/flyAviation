@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 
 import Hero from "../_components/Hero/Hero";
@@ -11,26 +11,13 @@ import Courses from "@/app/(router)/course/page";
 import Testemonials from "../_components/Testemonials";
 import Features from "../_components/Features";
 import Register from "../register/page";
-import Spinner from "../_components/Spinner";
 
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    // Simulate data fetching (replace with your actual data fetching logic)
-    setTimeout(() => {
-        // Assume data is fetched after 2 seconds
-        setData(/* your fetched data */);
-        setLoading(false); // Set loading to false when data fetching is complete
-    }, 200);
-}, []);
+
   return (
     <>
 
-   {loading ? (
-     <Spinner/>
-   ) : (
      <main>
 
    
@@ -64,7 +51,7 @@ const HomePage = () => {
 
     
       </main>
-    )}
+  
     </>
   );
 };
