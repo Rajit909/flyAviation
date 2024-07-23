@@ -100,7 +100,7 @@ const Register = () => {
     <>
       <div
         className="container-fluid bg-registration py-5"
-        style={{ margin: "60px 0" }}
+        style={{ margin: "40px 0" }}
       >
         <div className="container py-5">
           <div className="">
