@@ -209,6 +209,7 @@ const Register = () => {
                           className="form-control border-0 p-4"
                           name="phone"
                           id="phone"
+                          pattern="[0-9]{10}"
                           value={userData.phone}
                           onChange={handleChange}
                           placeholder="Phone"
@@ -245,6 +246,7 @@ const Register = () => {
                             type="file"
                             id="aadhar"
                             name="aadhar"
+                            accept=".jpg, .jpeg, .png, .pdf"
                             onChange={handleAadharfileChange}
                             required
                           />
@@ -259,8 +261,9 @@ const Register = () => {
                             type="file"
                             id="highmark"
                             name="highmark"
+                            accept=".jpg, .jpeg, .png, .pdf"
                             onChange={handleHighmarkfileChange}
-                            // required
+                            required
                           />
                         </div>
                       </div>
@@ -273,9 +276,11 @@ const Register = () => {
                             type="file"
                             id="intermark"
                             name="intermark"
+                            accept=".jpg, .jpeg, .png, .pdf"
                             onChange={handleIntermarkfileChange}
-                            // required
-                          />
+                            required
+                          /> <br />
+                          <small>अगर आप सिर्फ 10वीं पास हैं तो यहां भी 10वीं की मार्कशीट अपलोड करें |</small>
                         </div>
                       </div>
                       </div>
@@ -287,8 +292,9 @@ const Register = () => {
                             type="file"
                             id="photo"
                             name="photo"
+                            accept=".jpg, .jpeg, .png"
                             onChange={handlePhotofileChange}
-                            // required
+                            required
                           />
                         </div>
                       </div>
@@ -377,6 +383,7 @@ const Register = () => {
                           value={userData.country}
                           onChange={handleChange}
                           placeholder="Country"
+                          pattern="[A-Za-z\s\-]{2,}" 
                           required
                         />
                       </div>
