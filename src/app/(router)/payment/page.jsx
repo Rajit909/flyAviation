@@ -5,11 +5,10 @@ import { toast } from "sonner";
 
 const CourseFeeCalculator = () => {
   const [selectedCourse, setSelectedCourse] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState("");
   const [fee, setFee] = useState(0);
-  const [emiOptions, setEmiOptions] = useState([]);
-  const [selectedEmi, setSelectedEmi] = useState("");
-  const [totalFee, setTotalFee] = useState(0);
   const [installments, setInstallments] = useState([]);
+  const [payable, setPayable] = useState(0);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,64 +21,108 @@ const CourseFeeCalculator = () => {
   }, []);
 
   const courses = [
-    { name: "Diploma in Hotel Management", fee: 45000 },
-    { name: "Diploma in Air hostess", fee: 50000 },
-    { name: "Diploma in Cabin crew", fee: 40000 },
-    { name: "Diploma in Airport Management", fee: 39000 },
-    { name: "Diploma in Travel & Tourism Management", fee: 40000 },
-    { name: "Diploma in Human Resources Management", fee: 20000 },
-    { name: "Diploma in Marketing Management", fee: 30000 },
-    { name: "Diploma in Web Designing", fee: 35000 },
-    { name: "Diploma in Metro Management", fee: 40000 },
+    { name: "Diploma in Hotel Management", 
+      feePlan: {
+        "3 Months": 45000,
+        "6 Months": 90000,
+        "11 Months": 110000,
+      },
+    },
+    { name: "Diploma in Air hostess", 
+      feePlan: {
+        "3 Months": 50000,
+        "6 Months": 95000,
+        "11 Months": 115000,
+      },
+    },
+    { name: "Diploma in Cabin crew", 
+      feePlan: {
+        "3 Months": 40000,
+        "6 Months": 76000,
+        "11 Months": 91000,
+      }, 
+    },
+    { name: "Diploma in Airport Management", 
+      feePlan: {
+        "3 Months": 39000,
+        "6 Months": 73000,
+        "11 Months": 93000,
+      },
+    },
+    { name: "Diploma in Travel & Tourism Management",
+      feePlan: {
+        "3 Months": 40000,
+        "6 Months": 71000,
+        "11 Months": 91000,
+      },
+       },
+    { name: "Diploma in Human Resources Management",
+      feePlan: {
+        "3 Months": 20000,
+        "6 Months": 35000,
+        "11 Months": 60000,
+      },
+      },
+    { name: "Diploma in Marketing Management", 
+      feePlan: {
+        "3 Months": 30000,
+        "6 Months": 45000,
+        "11 Months": 70000,
+      },
+     },
+    { name: "Diploma in Web Designing", 
+      feePlan: {
+        "3 Months": 35000,
+        "6 Months": 60000,
+        "11 Months": 80000,
+      },
+     },
+    { name: "Diploma in Metro Management", 
+      feePlan: {
+        "3 Months": 40000,
+        "6 Months": 70000,
+        "11 Months": 110000,
+      },
+    },
   ];
 
   const handleCourseChange = (e) => {
     const selectedCourseName = e.target.value;
     setSelectedCourse(selectedCourseName);
-    const selectedCourse = courses.find(
-      (course) => course.name === selectedCourseName
+    const course = courses.find(
+      (course) => course.name === selectedCourse
     );
-    if (selectedCourse) {
-      setFee(selectedCourse.fee);
-      setSelectedEmi("");
-      setTotalFee(0);
-      setInstallments([]);
-      fetchEmiOptions(selectedCourse.fee);
-    } else {
-      setFee(0);
-      setEmiOptions([]);
-      setSelectedEmi("");
-      setTotalFee(0);
-      setInstallments([]);
+    if(course){
+      setSelectedPlan("3 Months"); //default to the first fee plan
+      setFee(course.feePlan["3 Months"])
+      setInstallments([])
+      displayInstallments(course.feePlan["3 Months"], 3);    
+    }else{
+      setFee(0)
+      setInstallments([])
     }
   };
 
-  const fetchEmiOptions = (amount) => {
-    const emiOptions = [{ duration: 3 }];
-
-    setEmiOptions(emiOptions);
-  };
-
-  const handleEmiChange = (e) => {
-    const selectedEmi = e.target.value;
-    setSelectedEmi(selectedEmi);
-    if (selectedEmi) {
-      const duration = parseInt(selectedEmi, 10);
-      const monthlyInstallment = Math.floor(fee / duration);
-      setTotalFee(monthlyInstallment);
-      displayInstallments(monthlyInstallment, duration);
-    } else {
-      setTotalFee(monthlyInstallment);
-      setInstallments([]);
+  // handleplan change
+  const handlePlanChange = (e) => {
+    const selectedPlanName = e.target.value;
+    setSelectedPlan(selectedPlanName);
+    const course = courses.find((course) => course.name === selectedCourse);
+    if (course) {
+      setFee(course.feePlan[selectedPlanName]);
+      const duration = parseInt(selectedPlanName.split(" ")[0], 10);
+      displayInstallments(course.feePlan[selectedPlanName], duration)
     }
   };
-
-  const displayInstallments = (monthlyInstallment, duration) => {
-    const newInstallments = [];
-    for (let i = 1; i <= duration; i++) {
-      newInstallments.push(`Installment ${i}: ₹${monthlyInstallment}`);
-    }
-    setInstallments(newInstallments);
+    //display installments 
+    const displayInstallments = (totalFee, duration) => {
+      const monthlyInstallment = Math.floor(totalFee / duration);
+      const newInstallments = [];
+      for (let i = 1; i <= duration; i++) {
+        newInstallments.push(`Installment ${i}: ₹${monthlyInstallment}`)        
+      }
+      setInstallments(newInstallments);
+      setPayable(monthlyInstallment)
   };
 
   const handlePayment = async () => {
@@ -88,7 +131,7 @@ const CourseFeeCalculator = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ amount: totalFee, name: name, email: email }),
+      body: JSON.stringify({ amount: payable, name: name, email: email }),
     });
     const order = await response.json();
 
@@ -109,7 +152,7 @@ const CourseFeeCalculator = () => {
       prefill: {
         name: name,
         email: email,
-        contact: "9999999999",
+        contact: "Contact number",
       },
       theme: {
         color: "#3399cc",
@@ -145,6 +188,30 @@ const CourseFeeCalculator = () => {
             ))}
           </select>
         </div>
+
+        <div className="form-group mb-3">
+          <label htmlFor="plan" className="text-dark mb-2">
+          Select Course Plan
+          </label>
+          <select
+            id="plan"
+            name="plan"
+            className="form-control"
+            value={selectedPlan}
+            onChange={handlePlanChange}
+          >
+            <option value="" hidden>Select Course Plan</option>
+           {
+            selectedCourse && 
+              Object.keys(courses.find((course) => course.name === selectedCourse).feePlan).map((plan) => (
+                <option key={plan} value={plan}>
+                  {plan}
+                </option>
+              ))
+           }
+          </select>
+        </div>
+
         <div className="form-group mb-3">
           <label htmlFor="fee" className="text-dark mb-2">
             Course Fee
@@ -158,38 +225,7 @@ const CourseFeeCalculator = () => {
             readOnly
           />
         </div>
-        <div className="form-group mb-3">
-          <label htmlFor="emi" className="text-dark mb-2">
-            Select EMI Plan
-          </label>
-          <select
-            id="emi"
-            name="emi"
-            className="form-control"
-            value={selectedEmi}
-            onChange={handleEmiChange}
-          >
-            <option value="">Select EMI Option</option>
-            {emiOptions.map((option) => (
-              <option key={option.duration} value={option.duration}>
-                {option.duration} months
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="totalFee" className="text-dark mb-2">
-            Total Fee
-          </label>
-          <input
-            type="text"
-            id="totalFee"
-            name="totalFee"
-            className="form-control"
-            value={totalFee.toFixed(2)}
-            readOnly
-          />
-        </div>
+       
         <div className="form-group mb-3">
           <label htmlFor="installments" className="text-dark mb-2">
             Installments
@@ -198,6 +234,14 @@ const CourseFeeCalculator = () => {
             {installments.map((installment, index) => (
               <div key={index}>{installment}</div>
             ))}
+          </div>
+          <div className="py-2">
+            Total Payable installment: {" "}
+            <span className="font-weight-bold text-primary border px-2 rounded-sm">
+              {
+                payable
+              }
+            </span>
           </div>
         </div>
         <div className="border border-secondry rounded p-3 mb-2">
