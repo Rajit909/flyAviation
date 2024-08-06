@@ -8,7 +8,7 @@ const CourseFeeCalculator = () => {
   const [selectedPlan, setSelectedPlan] = useState("");
   const [fee, setFee] = useState(0);
   const [installments, setInstallments] = useState([]);
-  const [payable, setPayable] = useState(0);
+  const [payable, setPayable] = useState("Please select Course Above");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
