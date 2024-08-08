@@ -36,8 +36,6 @@ export async function POST(request) {
     }
 
     // Upload files and get their URLs
-    const photoUrl = await uploadFile(files['photo']);
-    const aadharUrl = await uploadFile(files['aadhar']);
     const highmarkUrl = await uploadFile(files['highmark']);
     const intermarkUrl = await uploadFile(files['intermark']);
 
@@ -48,6 +46,7 @@ export async function POST(request) {
       gender,
       email,
       phone,
+      aadhar,
       qfn,
       address,
       state,
@@ -82,6 +81,7 @@ export async function POST(request) {
         Gender: ${gender}
         Email: ${email}
         Phone No. : ${phone}
+        Aadhar No. : ${aadhar}
         Qualification: ${qfn}          
         Adderess: ${address}
         State: ${state}
@@ -89,14 +89,7 @@ export async function POST(request) {
         Course: ${course}
       `,
       attachments: [
-        {
-          filename: files['photo'].name,
-          path: photoUrl,
-        },
-        {
-          filename: files['aadhar'].name,
-          path: aadharUrl,
-        },
+        // Attachments
         {
           filename: files['highmark'].name,
           path: highmarkUrl,
