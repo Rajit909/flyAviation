@@ -90,7 +90,7 @@ const CourseFeeCalculator = () => {
     const selectedCourseName = e.target.value;
     setSelectedCourse(selectedCourseName);
     const course = courses.find(
-      (course) => course.name === selectedCourse
+      (course) => course.name === selectedCourseName
     );
     if(course){
       setSelectedPlan("3 Months"); //default to the first fee plan
@@ -125,26 +125,41 @@ const CourseFeeCalculator = () => {
   };
 
   const handlePayment = async () => {
-    const response = await fetch("/api/create-order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ amount: payable, name: name, email: email }),
-    });
-    const order = await response.json();
+    if (!payable || isNaN(payable) || payable <= 0 || payable > fee) {
+      toast.error("Please enter a valid payable amount within the course fee.");
+      return;
+    }
+    if (!selectedCourse || !selectedPlan || !name || !email) {
+      toast.error("Please complete all fields before proceeding with payment.");
+      return;
+    }
+  
+    try{
 
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // client-side key
-      amount: order.amount,
-      currency: "INR",
-      name: "FlyAviation Academy: Course Fee Payment",
-      description: "Payment for selected course",
-      order_id: order.id,
-      handler: async (response) => {
+      const response = await fetch("/api/create-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ amount: payable, name: name, email: email }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to create order.");
+      }
+      const order = await response.json();
+      
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // client-side key
+        amount: order.amount,
+        currency: "INR",
+        name: "FlyAviation Academy: Course Fee Payment",
+        description: "Payment for selected course",
+        order_id: order.id,
+        handler: async (response) => {
         // Payment was successful
-        // alert(`Payment successful.  Transaction ID: ${response.razorpay_payment_id}`);
-        toast(
+        console.log(response)
+        alert(`Payment successful.  Transaction ID: ${response.razorpay_payment_id}`);
+        toast.success(
           "Payment successful.  Transaction ID: " + response.razorpay_payment_id
         );
       },
@@ -156,12 +171,24 @@ const CourseFeeCalculator = () => {
       theme: {
         color: "#3399cc",
       },
+      notes: {
+        address: "FlyAviation Academy, Mysore Rd, RV Vidyaniketan, Post, Bengaluru, Karnataka 560059",
+      },
+      modal: {
+        ondismiss: function () {
+          toast.error("Payment was cancelled.");
+        },
+      }
     };
-
+    
     const rzp = new window.Razorpay(options);
     rzp.open();
-  };
-
+  } catch (error) {
+    console.error(error);
+    toast.error("Something went wrong. Please try again later.");
+  }
+  }
+  
   return (
     <div className="container mt-5 p-4 bg-white border border-secondry rounded shadow-sm">
       <h2 className="h4 font-weight-bold mb-4">
