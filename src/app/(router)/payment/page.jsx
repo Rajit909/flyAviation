@@ -44,9 +44,9 @@ const CourseFeeCalculator = () => {
     },
     { name: "Diploma in Airport Management", 
       feePlan: {
-        "3 Months": 39000,
-        "6 Months": 73000,
-        "11 Months": 93000,
+        "3 Months": 45000,
+        "6 Months": 79000,
+        "11 Months": 99000,
       },
     },
     { name: "Diploma in Travel & Tourism Management",
