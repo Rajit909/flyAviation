@@ -8,11 +8,11 @@ const CourseFeeCalculator = () => {
   const [selectedPlan, setSelectedPlan] = useState("");
   const [fee, setFee] = useState(0);
   const [installments, setInstallments] = useState([]);
-  const [payable, setPayable] = useState("Please select Course Above");
-
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [payable, setPayable] = useState("");
+  
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
@@ -122,7 +122,6 @@ const CourseFeeCalculator = () => {
         newInstallments.push(`Installment ${i}: ₹${monthlyInstallment}`)        
       }
       setInstallments(newInstallments);
-      setPayable(monthlyInstallment)
   };
 
   const handlePayment = async () => {
@@ -236,11 +235,10 @@ const CourseFeeCalculator = () => {
             ))}
           </div>
           <div className="py-2">
-            Total Payable installment: {" "}
+            Enter payable amount: {" "}
             <span className="font-weight-bold text-primary border px-2 rounded-sm">
-              {
-                payable
-              }
+             
+              <input type="text" name="payable" id="payable" value={payable} onChange={(e) => setPayable(e.target.value)} />
             </span>
           </div>
         </div>

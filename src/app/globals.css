@@ -9,3 +9,30 @@
 
 
  
+.card {
+    border-radius: 20px;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .pay-btn {
+    background-color: #374cfa;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .pay-btn:hover {
+    background-color: #1a34f1;
+  }
+
+  .note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #6c757d;
+  }
