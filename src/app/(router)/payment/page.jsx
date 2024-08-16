@@ -11,7 +11,7 @@ const CourseFeeCalculator = () => {
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [payable, setPayable] = useState("");
+  const [payable, setPayable] = useState("Select Course Plan");
   
   useEffect(() => {
     const script = document.createElement("script");
