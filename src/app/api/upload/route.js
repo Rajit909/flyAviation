@@ -114,6 +114,6 @@ export async function POST(request) {
     console.error('Full error details:', error);
 
     // Return an error response
-    return NextResponse.json({ error: 'Error sending email.' }, { status: 500 });
+    return NextResponse.json({ error: 'Error sending email! invalid login.' }, { status: 500 });
   }
 }
