@@ -70,7 +70,7 @@ const Register = () => {
         setIntermarkFile("");
 
         // Redirect to payment page
-        router.push("/payments");
+        router.push("/payment");
       } else {
         alert("Failed to submit Application.");
       }
